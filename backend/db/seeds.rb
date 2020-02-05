@@ -68,16 +68,16 @@ Shoe.create(name: "Odin", brand: "Jimmy Choo", cost: 1095, image: "https://us.ji
 #     )
 # end
 
-Order.create(user: oneil, paid: true)
-Order.create(user: gaida, paid: false)
-Order.create(user: gaida, paid: true)
+# Order.create(user: oneil, paid: true)
+# Order.create(user: gaida, paid: false)
+# Order.create(user: gaida, paid: true)
 
-Joiner.create(order_id: 1, shoe_id: 1)
-Joiner.create(order_id: 2, shoe_id: 2)
-Joiner.create(order_id: 2, shoe_id: 3)
-Joiner.create(order_id: 3, shoe_id: 4)
-Joiner.create(order_id: 3, shoe_id: 5)
-Joiner.create(order_id: 3, shoe_id: 6)
+# Joiner.create(order_id: 1, shoe_id: 1)
+# Joiner.create(order_id: 2, shoe_id: 2)
+# Joiner.create(order_id: 2, shoe_id: 3)
+# Joiner.create(order_id: 3, shoe_id: 4)
+# Joiner.create(order_id: 3, shoe_id: 5)
+# Joiner.create(order_id: 3, shoe_id: 6)
 
 
 # byebug 

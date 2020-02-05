@@ -37,7 +37,7 @@ export default class NavbarComponent extends Component {
             </li>
           </ul>
           <div class="navbar-text">
-            {!!this.props.token ? <h5>Welcome, { this.props.username}!</h5> : " "}
+            {!!this.props.token ? <h5>Welcome, { this.props.username.toUpperCase()}!</h5> : " "}
           { !!this.props.token ? <button className="logout-btn" style={{marginLeft: 20}}onClick={ this.props.logOutClick }>Log Out</button> : "" }
           <Link to="/checkout"><img src={require('./cart.png')} style={{marginLeft: 20}}></img></Link>
           <h6 style={{marginLeft: 20, fontSize: 22}}>{this.props.cartItems.length}</h6>

@@ -12,6 +12,8 @@ export default class PastOrders extends Component {
     .then(response => response.json())
     .then(data => {
       // if(data.orders.paid === true) {
+        console.log(data);
+        
         this.setState({
           paidOrders: data.orders.filter(element => element.paid === true)
           
@@ -21,7 +23,8 @@ export default class PastOrders extends Component {
   }
 
   render() {
-
+    console.log(this.props);
+    
     return (
       <div>
         {this.state.paidOrders.map(po => {

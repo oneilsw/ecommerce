@@ -21,8 +21,8 @@ import ThankYou from './ThankYou'
 class App extends React.Component {
 
   state = {
-    token: localStorage.token,
-    loggedInUserId: localStorage.userId,
+    token: null,
+    loggedInUserId: null,
     cartItems: [],
     initializedCart: {},
     username: ''
@@ -92,15 +92,13 @@ class App extends React.Component {
     localStorage.userId = user_id
 
     this.setState({
-      token: token,
-      loggedInUserId: user_id
+      token: localStorage.token,
+      loggedInUserId: localStorage.userId
     })
   }
 
   logOutClick = () => {
     localStorage.clear()
-    // localStorage.userId = undefined
-    // localStorage.token = undefined
 
     this.setState({
       loggedInUserId: null,
@@ -109,11 +107,13 @@ class App extends React.Component {
   }
 
   render() {
-
+    console.log(this.state);
     // debugger
     console.log(this.state.initializedCart)
   
   return (
+    
+    
     <div>
       <Router>
       <NavbarComponent logOutClick={this.logOutClick} token={this.state.token} cartItems={this.state.cartItems} username={this.state.username}/>

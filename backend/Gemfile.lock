@@ -70,6 +70,7 @@ GEM
       activesupport
     concurrent-ruby (1.1.5)
     crass (1.0.6)
+    diff-lcs (1.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
@@ -112,6 +113,7 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     pg (1.2.2)
+    pgreset (0.1.1)
     puma (4.3.1)
       nio4r (~> 2.0)
     rack (2.1.1)
@@ -154,6 +156,23 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rspec-core (3.9.1)
+      rspec-support (~> 3.9.1)
+    rspec-expectations (3.9.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.2)
     ruby_dep (1.5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
@@ -191,10 +210,12 @@ DEPENDENCIES
   jwt (~> 2.2)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  pgreset
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.1)
   rest-client
+  rspec-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe

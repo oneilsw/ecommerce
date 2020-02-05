@@ -6,7 +6,7 @@ class LoginController < ApplicationController
         if user && user.authenticate(params[:password])
           render json: { token: token(user.id), user_id: user.id }
         else 
-          render json: { errors: [ "You done messed up!" ] }, status: :unprocessable_entity
+          render json: { errors: [ "You done messed up!" ] }
         end 
       end    
 

@@ -11,7 +11,7 @@ class Login extends React.Component {
     currentCart: {}
   }
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -23,6 +23,7 @@ class Login extends React.Component {
 
   logInSubmitted = (event) => {
     event.preventDefault()
+
     fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
@@ -32,16 +33,16 @@ class Login extends React.Component {
         username: this.state.username,
         password: this.state.password
       })
-    }).then(res => res.json())
-      .then(data => {
-        // debugger
-        
-        if (data.errors) {
-          this.setState({
-            errors: data.errors
-          })
+    })
+    .then(res => res.json())
+    .then(data => {
+       if (data.error) {
+          alert(data.error)
+          this.setState({errors: data.error})
         } else {
-          this.props.setToken(data)
+          this.props.setToken(data);
+          this.setState({logIn: true})
+
           fetch("http://localhost:3000/orders", {
             method: "POST",
             headers: {
@@ -54,7 +55,6 @@ class Login extends React.Component {
             })
           }).then(response => response.json())
           .then(data => {
-            // debugger
             this.props.getUsername(data.user.username)
             this.props.getOrder(data)
           })
@@ -86,9 +86,8 @@ class Login extends React.Component {
   }
 
   render(){
-
-// debugger 
-    // console.log(this.state.user)
+    console.log(this.props);
+    
     if (this.props.token) return <Redirect to='/checkout' />
 
     return <>
@@ -105,17 +104,19 @@ class Login extends React.Component {
           <button onClick={ () => this.setState({ logIn: false }) }>I need to register!!!</button>
           <form onSubmit={ this.logInSubmitted }>
             <label  htmlFor="log_in_username">Username</label>
-            <input  id="log_in_username" 
+            <input  id="username" 
                     type="text" 
-                    onChange={ this.onChange /* for controlled form input status */ } 
+                    onChange={ this.onChange } 
                     name="username" 
-                    value={ this.state.username /* for controlled form input status */ } />
+                    value={ this.state.username } />
+            <br></br>
             <label  htmlFor="log_in_password">Password</label>
-            <input  id="log_in_password" 
+            <input  id="password" 
                     type="password" 
                     onChange={ this.onChange } 
                     name="password" 
                     value={ this.state.password } />
+            <br/>
             <input type="submit" />
           </form>
         </section>
@@ -149,13 +150,3 @@ export default Login
 
 
 
-// const order = {
-//   orderId: 'string',
-//   userId: 'string',
-//   total: 'number',
-//   products: [
-//     {},
-//     {},
-//     {}
-//   ]
-// }
