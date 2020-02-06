@@ -2,7 +2,7 @@
 
 An ecommerce clothing store in which you can browse apparel for either men or women, add items to your cart and login/signup in order to make a purchase. Credit card processing was made possible using Stripe API. Thank you for visiting!
 
-![](https://media.giphy.com/media/gKroZH43TXcIvfGhVj/giphy.mp4)
+![](https://media.giphy.com/media/gKroZH43TXcIvfGhVj/giphy.gif)
 
 
 ## Languages and Frameworks
